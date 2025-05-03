@@ -1,3 +1,4 @@
+/* existing CRA styles… */
 .App {
   text-align: center;
 }
@@ -15,13 +16,13 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  min-height: 30vh;
   font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .App-link {
@@ -29,10 +30,61 @@
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ────────────── spinner ────────────── */
+.spinner {
+  margin: 40px auto;
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #61dafb;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ────────────── controls ────────────── */
+.control-button {
+  padding: 8px 16px;
+  margin: 0 10px;
+  border: none;
+  background-color: #61dafb;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.control-button:hover {
+  background-color: #21a1f1;
+}
+
+/* ───────── responsive media container ───────── */
+.media-container {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  margin: 20px auto;
+}
+.media-container video,
+.media-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.media-container canvas {
+  position: absolute;
+  top:  0;
+  left: 0;
+  width:  100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
 }
